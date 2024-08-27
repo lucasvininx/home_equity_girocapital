@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#whatsappButton').addEventListener('click', sendToWhatsApp);
 });
 
+function formatCurrency(value) {
+    return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  }
+
 function goToLoanDetails() {
     const personalSection = document.getElementById('personalDataSection');
     const loanSection = document.getElementById('loanDataSection');
@@ -51,7 +55,8 @@ function calculateLoan() {
     document.getElementById('termDisplay').textContent = term;
     document.getElementById('installment').textContent = formatCurrency(monthlyInstallment.toFixed(2));
     document.getElementById('totalPayment').textContent = formatCurrency(totalPayment.toFixed(2));
-
+    
+    // Torna o resultado visível
     document.getElementById('result').style.display = 'block';
 }
 
@@ -88,7 +93,7 @@ function sendToWhatsApp() {
     const installment = document.getElementById('installment').textContent.replace('R$', '').trim();
     const totalPayment = document.getElementById('totalPayment').textContent.replace('R$', '').trim();
 
-    const whatsappNumber = "55199999999"; // Substitua pelo seu número de WhatsApp
+    const whatsappNumber = "5519994782797"; // Substitua pelo seu número de WhatsApp
     const message = `Simulação de Empréstimo:\n\nNome: ${name}\nCidade: ${city}\nEstado: ${state}\nNúmero: ${phone}\n\nValor do Imóvel: R$${propertyValue}\nValor do Empréstimo: R$${loanValue}\nPrazo: ${term} meses\nParcela: R$${installment}\nTotal a Pagar: R$${totalPayment}\n\n*Esses valores são uma estimativa e podem variar conforme a negociação e análise de crédito.*`;
 
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
