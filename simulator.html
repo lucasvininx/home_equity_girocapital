@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_simulator.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <title>Simulador | Giro Capital</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Empréstimo Home Equity</h1>
+
+        <div class="form-section active" id="personalDataSection">
+            <h2>Dados Pessoais</h2>
+
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" placeholder="Digite seu nome completo" required>
+
+            <label for="city">Cidade:</label>
+            <input type="text" id="city" placeholder="Digite sua cidade" required>
+
+            <label for="state">Estado:</label>
+            <input type="text" id="state" placeholder="Digite seu estado" required>
+
+            <label for="phone">Número para contato:</label>
+            <input type="tel" id="phone" placeholder="Digite seu número para contato" required>
+
+            <button onclick="goToLoanDetails()">Próximo</button>
+        </div>
+
+        <div class="form-section" id="loanDataSection">
+            <h2>Dados do Empréstimo</h2>
+
+            <label for="propertyType">Tipo de Imóvel:</label>
+            <select id="propertyType" required>
+                <option value="" disabled selected>Selecione o tipo de imóvel</option>
+                <option value="Casa">Casa</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Posto de Gasolina">Posto de Gasolina</option>
+                <option value="Sala Comercial">Sala Comercial</option>
+            </select>
+
+            <label for="propertyRegion">Estado do Imóvel:</label>
+            <input type="text" id="propertyRegion" placeholder="Digite o estado onde o imóvel está localizado" required>
+
+            <label for="propertyCity">Cidade do Imóvel:</label>
+            <input type="text" id="propertyCity" placeholder="Digite a cidade onde o imóvel está localizado" required>
+
+            <label for="propertyValue">Valor do Imóvel (R$):</label>
+            <input type="number" id="propertyValue" placeholder="Digite o valor do imóvel" required>
+
+            <label for="loanValue">Valor Desejado do Empréstimo (R$):</label>
+            <input type="number" id="loanValue" placeholder="Digite o valor desejado do empréstimo" required>
+
+            <label for="term">Prazo (meses):</label>
+            <input type="number" id="term" min="1" max="180" placeholder="Digite o prazo em meses (até 180)" required>
+
+            <button onclick="calculateLoan()">Fazer Simulação</button>
+
+            <div class="result" id="result" style="display: none;">
+                <p><strong>Simulação Concluída!</strong></p>
+                <p>Com base nas informações fornecidas, sua simulação apresentou os seguintes resultados:</p>
+                <p><strong>Valor do Imóvel:</strong> <span id="propertyValueDisplay"></span></p>
+                <p><strong>Valor do Empréstimo:</strong> <span id="loanValueDisplay"></span></p>
+                <p><strong>Prazo:</strong> <span id="termDisplay"></span> meses</p>
+                <p><strong>Taxa de Juros:</strong> 1,19% AM + IPCA</p>
+                <p><strong>Valor da Parcela:</strong> <span id="installment"></span></p>
+                <p><strong>Total a Pagar:</strong> <span id="totalPayment"></span></p>
+                <p><em>Esses valores são uma estimativa e podem variar conforme a negociação e análise de crédito.</em></p>
+                <button class="whatsapp-button" id="whatsappButton">Enviar Simulação</button>
+            </div>
+        </div>
+    </div>
+    <script src="main_simulator.js"></script>
+</body>
+</html>
