@@ -1,4 +1,3 @@
-### Descrição da Landing Page e Simulador para o README.md
 
 ---
 
