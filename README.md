@@ -40,12 +40,14 @@ O **Simulador de Crédito** da **Giro Capital** é uma ferramenta poderosa que p
 
 1. **Clone o Repositório:**
    ```bash
-   git clone https://github.com/lucasvininx/seu-repositorio.git
+   git clone git clone https://github.com/seu-usuario/seu-repositorio.git
+
    ```
    
 2. **Navegue para o Diretório:**
    ```bash
    cd seu-repositorio
+
    ```
 
 3. **Abra o Arquivo HTML no Navegador:**
