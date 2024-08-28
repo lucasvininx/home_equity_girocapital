@@ -27,7 +27,7 @@ ul {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url("assets/bg.png");
+  background-image: url('../assets/images/bg.png');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
